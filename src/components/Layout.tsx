@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Home, MapPin, BookOpen, BarChart3, FileText, Menu, X, Trees, Leaf } from 'lucide-react';
+import { Home, MapPin, BookOpen, BarChart3, FileText, Menu, X, Trees, Leaf, Newspaper } from 'lucide-react';
 
-export type Page = 'home' | 'profile' | 'learning' | 'dashboard' | 'publications';
+export type Page = 'home' | 'profile' | 'learning' | 'dashboard' | 'publications' | 'artikel';
 
 const NAV_ITEMS: { id: Page; label: string; icon: React.ReactNode }[] = [
   { id: 'home', label: 'Beranda', icon: <Home className="w-4 h-4" /> },
   { id: 'profile', label: 'Profil & Wilayah', icon: <MapPin className="w-4 h-4" /> },
   { id: 'learning', label: 'Pusat Pembelajaran', icon: <BookOpen className="w-4 h-4" /> },
   { id: 'dashboard', label: 'Dashboard Interaktif', icon: <BarChart3 className="w-4 h-4" /> },
+  { id: 'artikel', label: 'Artikel', icon: <Newspaper className="w-4 h-4" /> },
   { id: 'publications', label: 'Publikasi & Kontak', icon: <FileText className="w-4 h-4" /> },
 ];
 
@@ -15,7 +16,6 @@ export function Navbar({ current, onNavigate }: { current: Page; onNavigate: (p:
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Track scroll for background change
   if (typeof window !== 'undefined') {
     window.onscroll = () => setScrolled(window.scrollY > 20);
   }
