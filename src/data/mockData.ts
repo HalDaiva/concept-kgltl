@@ -21,10 +21,9 @@ export const IMAGES = {
 };
 
 export const KPI_DATA = [
-  { id: 'area', label: 'Total Luas Pemulihan', value: 352, unit: 'Ha', target: 352, percent: 100, icon: 'trees', color: 'mangrove', detail: '150 Ha + 202 Ha areal pemulihan' },
-  { id: 'participants', label: 'Total Partisipan', value: 513, unit: 'orang', target: 513, percent: 100, icon: 'users', color: 'lagoon', detail: '409 Laki-laki & 104 Perempuan' },
-  { id: 'budget', label: 'Realisasi Anggaran', value: 10.83, unit: '%', target: 100, percent: 10.83, icon: 'wallet', color: 'sand', detail: 'Rp2,49 M dari Rp23,05 M' },
-  { id: 'patrol', label: 'Frekuensi Patroli', value: 15, unit: 'kali', target: 36, percent: 41.67, icon: 'shield', color: 'clay', detail: 'Target tahunan: 36 kali' },
+  { id: 'area', label: 'Pemulihan Ekosistem', value: 352, unit: 'Ha', target: 352, percent: 100, icon: 'trees', color: 'mangrove', detail: '202 Ha areal pemulihan' },
+  { id: 'participants', label: 'Pemberdayaan Masyarakat', value: 513, unit: 'orang', target: 513, percent: 100, icon: 'users', color: 'lagoon', detail: '513 Orang Partisipan' },
+  { id: 'patrol', label: 'Perlindungan Mangrove', value: 15, unit: 'kali', target: 36, percent: 41.67, icon: 'shield', color: 'clay', detail: 'Dengan 4 Metode Inovatif' },
 ];
 
 // Articles
@@ -99,8 +98,17 @@ export const ARTICLES = [
 
 // Modul 1: Penanaman & Pemeliharaan
 export const MONITORING_PERTUMBUHAN = [
-  { blok: 'Blok 150 Ha', realisasi: 150 },
-  { blok: 'Blok 202 Ha', realisasi: 202 },
+  { blok: '2022', realisasi: 150 },
+  { blok: '2023', realisasi: 202 },
+  { blok: '2024', realisasi: 160 },
+  { blok: '2025', realisasi: 190 },
+];
+
+export const MONITORING_PEMELIHARAAN = [
+  { blok: '2022', realisasi: 200 },
+  { blok: '2023', realisasi: 160 },
+  { blok: '2024', realisasi: 195 },
+  { blok: '2025', realisasi: 220 },
 ];
 
 export const GULUDAN_MINI = {
@@ -175,8 +183,8 @@ export const GENDER_DATA = [
 ];
 
 export const PENERIMA_MANFAAT = [
-  { kategori: 'Masyarakat', lakiLaki: 302, perempuan: 61 },
-  { kategori: 'Petugas (BBKSDA/Fasdes)', lakiLaki: 107, perempuan: 43 },
+  { kategori: 'Laki-laki', terlibat: 302, tidakTerlibat: 61 },
+  { kategori: 'Perempuan', terlibat: 107, tidakTerlibat: 43 },
 ];
 
 export const KTH_LIST = [
@@ -255,12 +263,12 @@ export const PATROL_DATA = {
 };
 
 export const GRID_PATROL = [
-  { nama: 'Grid 1', temuan: 3, status: 'Aktif', area: 'Zona Utara Karang Gading' },
-  { nama: 'Grid 2', temuan: 1, status: 'Aktif', area: 'Zona Tengah Karang Gading' },
-  { nama: 'Grid 3', temuan: 2, status: 'Aktif', area: 'Zona Selatan Tapak Kuda' },
-  { nama: 'Grid 4', temuan: 0, status: 'Aktif', area: 'Zona Barat Tapak Kuda' },
-  { nama: 'Grid 5', temuan: 1, status: 'Aktif', area: 'Zona Utara Selotong' },
-  { nama: 'Grid 6', temuan: 2, status: 'Aktif', area: 'Zona Selatan Selotong' },
+  { nama: 'Grid 1', temuan: 3, status: 'Aktif', area: 'Zona Resor 1 (Karang Gading)' },
+  { nama: 'Grid 2', temuan: 1, status: 'Aktif', area: 'Zona Resor 2 (Tapak Kuda)' },
+  { nama: 'Grid 3', temuan: 2, status: 'Aktif', area: 'Zona Resor 1 (Karang Gading)' },
+  { nama: 'Grid 4', temuan: 0, status: 'Aktif', area: 'Zona Resor 1 (Karang Gading)' },
+  { nama: 'Grid 5', temuan: 1, status: 'Aktif', area: 'Zona Resor 3 (Selotong)' },
+  { nama: 'Grid 6', temuan: 2, status: 'Aktif', area: 'Zona Resor 1 (Karang Gading)' },
 ];
 
 export const PATROL_LOG = [
@@ -268,7 +276,7 @@ export const PATROL_LOG = [
     id: 'P-001',
     tanggal: '12 Jan 2026',
     grid: 'Grid 1',
-    area: 'Zona Utara Karang Gading',
+    area: 'Resor 1 (Karang Gading)',
     temuanList: [
       { tipe: 'Gangguan Kawasan', deskripsi: 'Perambahan lahan oleh oknum', status: 'Ditangani' },
       { tipe: 'Flora', deskripsi: 'Rhizophora mucronata — kondisi baik, 95% hidup', status: 'Terdokumentasi' },
@@ -278,7 +286,7 @@ export const PATROL_LOG = [
     id: 'P-002',
     tanggal: '25 Jan 2026',
     grid: 'Grid 3',
-    area: 'Zona Selatan Tapak Kuda',
+    area: 'Resor 1 (Karang Gading)',
     temuanList: [
       { tipe: 'Gangguan Kawasan', deskripsi: 'Penebangan liar pohon bakau', status: 'Ditangani' },
     ],
@@ -287,7 +295,7 @@ export const PATROL_LOG = [
     id: 'P-003',
     tanggal: '08 Feb 2026',
     grid: 'Grid 5',
-    area: 'Zona Utara Selotong',
+    area: 'Resor 1 (Karang Gading)',
     temuanList: [
       { tipe: 'Fauna', deskripsi: 'Cangking Abu (Egretta garzetta) — 12 ekor', status: 'Terdokumentasi' },
       { tipe: 'Fauna', deskripsi: 'Monyet Ekor Panjang — 5 ekor', status: 'Terdokumentasi' },
@@ -297,7 +305,7 @@ export const PATROL_LOG = [
     id: 'P-004',
     tanggal: '15 Feb 2026',
     grid: 'Grid 1',
-    area: 'Zona Utara Karang Gading',
+    area: 'Resor 1 (Karang Gading)',
     temuanList: [
       { tipe: 'Gangguan Kawasan', deskripsi: 'Pencurian kayu mangrove', status: 'Proses Hukum' },
     ],
@@ -306,7 +314,7 @@ export const PATROL_LOG = [
     id: 'P-005',
     tanggal: '03 Mar 2026',
     grid: 'Grid 4',
-    area: 'Zona Barat Tapak Kuda',
+    area: 'Resor 1 (Karang Gading)',
     temuanList: [
       { tipe: 'Flora', deskripsi: 'Avicennia marina — pertumbuhan normal', status: 'Terdokumentasi' },
       { tipe: 'Fauna', deskripsi: 'Biawak Air (Varanus salvator) — 2 ekor', status: 'Terdokumentasi' },
@@ -316,7 +324,7 @@ export const PATROL_LOG = [
     id: 'P-006',
     tanggal: '20 Mar 2026',
     grid: 'Grid 6',
-    area: 'Zona Selatan Selotong',
+    area: 'Resor 1 (Karang Gading)',
     temuanList: [
       { tipe: 'Gangguan Kawasan', deskripsi: 'Penambangan pasir ilegal', status: 'Ditangani' },
     ],
@@ -325,7 +333,7 @@ export const PATROL_LOG = [
     id: 'P-007',
     tanggal: '10 Apr 2026',
     grid: 'Grid 2',
-    area: 'Zona Tengah Karang Gading',
+    area: 'Resor 1 (Karang Gading)',
     temuanList: [
       { tipe: 'Flora', deskripsi: 'Kondisi vegetasi baik, tidak ada gangguan', status: 'Terdokumentasi' },
     ],
@@ -334,7 +342,7 @@ export const PATROL_LOG = [
     id: 'P-008',
     tanggal: '22 Apr 2026',
     grid: 'Grid 3',
-    area: 'Zona Selatan Tapak Kuda',
+    area: 'Resor 1 (Karang Gading)',
     temuanList: [
       { tipe: 'Gangguan Kawasan', deskripsi: 'Perambahan lahan untuk tambak ilegal', status: 'Ditangani' },
       { tipe: 'Fauna', deskripsi: 'Kepiting Bakau — populasi stabil', status: 'Terdokumentasi' },

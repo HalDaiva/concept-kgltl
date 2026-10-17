@@ -4,7 +4,7 @@ import {
   ProgressBar, BulletChart, PieChart, HeatmapGrid, StatCard, CountUp
 } from '@/components/charts';
 import {
-  MONITORING_PERTUMBUHAN, GULUDAN_MINI,
+  MONITORING_PERTUMBUHAN, MONITORING_PEMELIHARAAN, GULUDAN_MINI,
   GENDER_DATA, PENERIMA_MANFAAT, KTH_LIST,
   PATROL_DATA, GRID_PATROL, PATROL_LOG,
   FAUNA_DATA, FLORA_DATA, TUNTONG_STATUS,
@@ -25,7 +25,7 @@ const TABS: { id: TabId; label: string; icon: React.ReactNode; desc: string }[] 
   { id: 'tab2', label: 'Pemberdayaan Masyarakat & GEDSI', icon: <Users className="w-4 h-4" />, desc: 'Partisipasi warga & inklusi sosial' },
   { id: 'tab3', label: 'SMART Patrol', icon: <Shield className="w-4 h-4" />, desc: 'Pengawasan kawasan partisipatif' },
   { id: 'tab4', label: 'Satwa & Biodiversitas', icon: <Bird className="w-4 h-4" />, desc: 'Monitoring keanekaragaman hayati' },
-  { id: 'tab5', label: 'Restorasi Fisik & Anggaran', icon: <Wallet className="w-4 h-4" />, desc: 'Hidrologi & akuntabilitas keuangan' },
+  // { id: 'tab5', label: 'Restorasi Fisik & Anggaran', icon: <Wallet className="w-4 h-4" />, desc: 'Hidrologi & akuntabilitas keuangan' },
 ];
 
 export function DashboardPage() {
@@ -205,17 +205,32 @@ function Tab1() {
       </div>
 
       {/* Monitoring Pertumbuhan Chart */}
-      <div className="card p-6">
-        <h3 className="font-semibold text-mangrove-900 mb-2">Monitoring Pertumbuhan per Areal Tanam</h3>
-        <p className="text-xs text-mangrove-400 mb-4">Realisasi penanaman — Total 352 Ha (Capaian 100%)</p>
-        <BarChart
-          data={MONITORING_PERTUMBUHAN.map(m => ({
-            label: m.blok,
-            bars: [
-              { value: m.realisasi, color: '#236a4e', name: 'Realisasi' },
-            ]
-          }))}
-        />
+      <div className="grid lg:grid-cols-2 gap-5">
+        <div className="card p-6">
+          <h3 className="font-semibold text-mangrove-900 mb-2">Monitoring Pertumbuhan per Tahun</h3>
+          <p className="text-xs text-mangrove-400 mb-4">Realisasi penanaman — Total 352 Ha</p>
+          <BarChart
+            data={MONITORING_PERTUMBUHAN.map(m => ({
+              label: m.blok,
+              bars: [
+                { value: m.realisasi, color: '#236a4e', name: 'Realisasi' },
+              ]
+            }))}
+          />
+        </div>
+
+        <div className="card p-6">
+          <h3 className="font-semibold text-mangrove-900 mb-2">Monitoring Pemeliharaan per Tahun</h3>
+          <p className="text-xs text-mangrove-400 mb-4">Realisasi pemeliharaan — Total 400 Ha</p>
+          <BarChart
+            data={MONITORING_PEMELIHARAAN.map(m => ({
+              label: m.blok,
+              bars: [
+                { value: m.realisasi, color: '#236a4e', name: 'Realisasi' },
+              ]
+            }))}
+          />
+        </div>
       </div>
 
       {/* Penanaman Table */}
@@ -426,7 +441,7 @@ function Tab2() {
           <h3 className="font-semibold text-mangrove-900 mb-2">Proporsi Partisipasi Berdasarkan Gender</h3>
           <p className="text-xs text-mangrove-400 mb-4">Total 513 individu</p>
           <DonutChart data={GENDER_DATA.map(g => ({ label: g.label, value: g.value, percent: g.percent, color: g.color }))} />
-          <div className="mt-4 pt-4 border-t border-mangrove-50 space-y-2">
+          {/* <div className="mt-4 pt-4 border-t border-mangrove-50 space-y-2">
             <div className="text-xs font-semibold text-mangrove-500 mb-2">Terlibat Penanaman</div>
             {GENDER_DATA.map((g, i) => (
               <div key={i} className="flex items-center justify-between">
@@ -440,19 +455,19 @@ function Tab2() {
                 </div>
               </div>
             ))}
-          </div>
+          </div>  */}
         </div>
 
         {/* Stacked Column: Penerima Manfaat */}
         <div className="card p-6">
-          <h3 className="font-semibold text-mangrove-900 mb-2">Komposisi Penerima Manfaat per Kategori</h3>
-          <p className="text-xs text-mangrove-400 mb-6">Berdasarkan kategori & gender</p>
+          <h3 className="font-semibold text-mangrove-900 mb-2">Komposisi Masyarakat Terlibat Penanaman</h3>
+          <p className="text-xs text-mangrove-400 mb-6">Berdasarkan kategori gender</p>
           <StackedColumnChart
             data={PENERIMA_MANFAAT.map(p => ({
               label: p.kategori,
               segments: [
-                { value: p.lakiLaki, color: '#236a4e', name: 'Laki-laki' },
-                { value: p.perempuan, color: '#3fa9c2', name: 'Perempuan' },
+                { value: p.terlibat, color: '#236a4e', name: 'Terlibat' },
+                { value: p.tidakTerlibat, color: '#3fa9c2', name: 'Tidak Terlibat' },
               ]
             }))}
           />
@@ -472,7 +487,6 @@ function Tab2() {
                 <th className="px-4 py-3 font-semibold">Nama Kelompok</th>
                 <th className="px-4 py-3 font-semibold">Desa</th>
                 <th className="px-4 py-3 font-semibold">Jenis Investasi</th>
-                <th className="px-4 py-3 font-semibold text-right">Nilai</th>
                 <th className="px-4 py-3 font-semibold text-center">Progress</th>
               </tr>
             </thead>
@@ -482,7 +496,6 @@ function Tab2() {
                   <td className="px-4 py-3 font-semibold text-mangrove-900">{ik.namaKelompok}</td>
                   <td className="px-4 py-3 text-mangrove-600 text-sm">{ik.desa}</td>
                   <td className="px-4 py-3 text-mangrove-700">{ik.jenisInvestasi}</td>
-                  <td className="px-4 py-3 text-right font-semibold text-mangrove-900">{formatRupiah(ik.nilai)}</td>
                   <td className="px-4 py-3 text-center">
                     <div className="flex items-center justify-center gap-1.5">
                       <div className={`w-2.5 h-2.5 rounded-full ${progressStyle[ik.progress]?.dot || 'bg-mangrove-300'}`} />
@@ -562,7 +575,7 @@ function Tab3() {
     { row: 4, col: 0, value: 1 }, { row: 4, col: 1, value: 0 }, { row: 4, col: 2, value: 0 }, { row: 4, col: 3, value: 0 }, { row: 4, col: 4, value: 0 }, { row: 4, col: 5, value: 0 },
     { row: 5, col: 0, value: 0 }, { row: 5, col: 1, value: 0 }, { row: 5, col: 2, value: 1 }, { row: 5, col: 3, value: 1 }, { row: 5, col: 4, value: 0 }, { row: 5, col: 5, value: 0 },
   ];
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun'];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
   const grids = ['Grid 1', 'Grid 2', 'Grid 3', 'Grid 4', 'Grid 5', 'Grid 6'];
 
   return (
@@ -576,7 +589,7 @@ function Tab3() {
       </div>
 
       <FilterBar filters={[
-        { label: 'Grid', options: ['Grid 1', 'Grid 2', 'Grid 3', 'Grid 4', 'Grid 5', 'Grid 6'] },
+        { label: 'Tahun', options: ['2022', '2023', '2024', '2025', '2025'] },
         { label: 'Bulan', options: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'] },
         { label: 'Tipe Temuan', options: ['Flora', 'Fauna', 'Gangguan Kawasan'] },
       ]} />
@@ -584,7 +597,8 @@ function Tab3() {
       <div className="grid lg:grid-cols-2 gap-5">
         {/* Frekuensi Patroli: Grid Coverage */}
         <div className="card p-6">
-          <h3 className="font-semibold text-mangrove-900 mb-4">Frekuensi Patroli Pengamanan</h3>
+          <h3 className="font-semibold text-mangrove-900 mb-2">Frekuensi Patroli Pengamanan</h3>
+          <p className="text-xs text-mangrove-400 mb-4">Grid terpatroli dan temuan pada Juli 2026</p>
           <div className="flex items-center justify-center gap-8 mb-4">
             <div className="text-center">
               <div className="stat-number text-5xl text-mangrove-900">{GRID_PATROL.length}</div>
@@ -618,7 +632,7 @@ function Tab3() {
               label: b.bulan.slice(0, 3),
               bars: [{ value: b.capaian, color: '#236a4e', name: 'Patroli' }]
             }))}
-            height={200}
+            height={240}
           />
         </div>
       </div>
@@ -716,7 +730,7 @@ function Tab4() {
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex gap-2">
+      {/* <div className="flex gap-2">
         {(['semua', 'flora', 'fauna'] as const).map(f => (
           <button
             key={f}
@@ -731,7 +745,7 @@ function Tab4() {
             {f === 'semua' ? 'Semua' : f.charAt(0).toUpperCase() + f.slice(1)}
           </button>
         ))}
-      </div>
+      </div>  */}
 
       {/* Summary Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -743,14 +757,16 @@ function Tab4() {
         )}
       </div>
 
+      <div  className="grid lg:grid-cols-2 gap-5">
+
       {/* Fauna Section */}
       {(activeFilter === 'semua' || activeFilter === 'fauna') && (
         <>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <Bird className="w-5 h-5 text-mangrove-600" />
             <h3 className="font-semibold text-mangrove-800">Data Fauna</h3>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-5">
+          </div>  */}
+          <div className="grid lg:grid-cols-1 gap-5">
             <div className="card p-6">
               <h4 className="font-semibold text-mangrove-900 mb-2">Komposisi Temuan Fauna</h4>
               <p className="text-xs text-mangrove-400 mb-6">Berdasarkan kelompok taksa</p>
@@ -763,7 +779,7 @@ function Tab4() {
                 }))}
               />
             </div>
-            <div className="grid grid-cols-1 gap-3">
+            {/* <div className="grid grid-cols-1 gap-3">
               {FAUNA_DATA.map((s, i) => (
                 <div key={i} className="card p-4">
                   <div className="flex items-center justify-between mb-2">
@@ -787,7 +803,7 @@ function Tab4() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </>
       )}
@@ -795,11 +811,11 @@ function Tab4() {
       {/* Flora Section */}
       {(activeFilter === 'semua' || activeFilter === 'flora') && (
         <>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <Flower2 className="w-5 h-5 text-mangrove-600" />
             <h3 className="font-semibold text-mangrove-800">Data Flora</h3>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-5">
+          </div> */}
+          <div className="grid lg:grid-cols-1 gap-5">
             <div className="card p-6">
               <h4 className="font-semibold text-mangrove-900 mb-2">Komposisi Temuan Flora</h4>
               <p className="text-xs text-mangrove-400 mb-6">Berdasarkan kelompok vegetasi</p>
@@ -812,7 +828,7 @@ function Tab4() {
                 }))}
               />
             </div>
-            <div className="grid grid-cols-1 gap-3">
+            {/* <div className="grid grid-cols-1 gap-3">
               {FLORA_DATA.map((s, i) => (
                 <div key={i} className="card p-4">
                   <div className="flex items-center justify-between mb-2">
@@ -836,10 +852,12 @@ function Tab4() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </>
       )}
+
+      </div>
 
       {/* Tuntong Status */}
       <div className="card p-6 bg-gradient-to-br from-lagoon-50 to-white">

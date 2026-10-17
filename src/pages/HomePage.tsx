@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Trees, Users, Wallet, Shield, ArrowRight, MapPin, Leaf, Waves, Bird, Sprout, TrendingUp, Calendar, Newspaper, Clock } from 'lucide-react';
 import { IMAGES, KPI_DATA, ARTICLES } from '@/data/mockData';
-import { CountUp, StatCard } from '@/components/charts';
+import {CountUp, ProgramCard, StatCard} from '@/components/charts';
 import type { Page } from '@/components/Layout';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -23,16 +23,15 @@ export function HomePage({ onNavigate }: { onNavigate: (p: Page) => void }) {
 
         <div className="container-page relative z-10 pt-20">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-sm font-medium mb-6 animate-fade-in-up">
-              <Leaf className="w-4 h-4" />
-              Forest Programme VI — Kerjasama RI & Jerman (KfW)
-            </div>
-
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] text-balance animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              Pemulihan Ekosistem<br />
-              <span className="bg-gradient-to-r from-mangrove-200 to-lagoon-200 bg-clip-text text-transparent">
-                Mangrove SM KGLTL
-              </span>
+              Pusat Pembelajaran Pemulihan Ekosistem Mangrove<br />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-sm font-medium mb-6 animate-fade-in-up">
+                <Leaf className="w-4 h-4" />
+                Suaka Margasatwa Karang Gading dan Langkat Timur Laut
+              </div>
+              {/*<span className="bg-gradient-to-r from-mangrove-200 to-lagoon-200 bg-clip-text text-transparent text-2xl">*/}
+              {/*  Suaka Margasatwa Karang Gading dan Langkat Timur Laut*/}
+              {/*</span>*/}
             </h1>
 
             <p className="text-lg text-white/80 mt-6 max-w-2xl leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -44,28 +43,28 @@ export function HomePage({ onNavigate }: { onNavigate: (p: Page) => void }) {
                 <BarChart3 className="w-5 h-5" />
                 Jelajahi Dashboard
               </button>
-              <button onClick={() => onNavigate('learning')} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold hover:bg-white/20 transition-all active:scale-95">
-                <BookOpen className="w-5 h-5" />
-                Pusat Pembelajaran
+              <button onClick={() => window.open('https://worldmangrovecenter.org/data-center/7a170800-f753-440a-8cc8-8d30413e0b46', '_blank')} className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold hover:bg-white/20 transition-all active:scale-95">
+                <OpenPage className="w-5 h-5" />
+                World mangrove Center
               </button>
             </div>
 
             {/* Quick stats in hero */}
-            <div className="grid grid-cols-3 gap-4 mt-12 max-w-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              {[
-                { val: 352, unit: 'Ha', label: 'Areal Pemulihan' },
-                { val: 513, unit: '', label: 'Partisipan' },
-                { val: 17, unit: '', label: 'Desa Penyangga' },
-              ].map((s, i) => (
-                <div key={i} className="text-white">
-                  <div className="stat-number text-3xl">
-                    <CountUp value={s.val} />
-                    <span className="text-lg text-mangrove-200 ml-1">{s.unit}</span>
-                  </div>
-                  <div className="text-xs text-white/60 font-medium mt-0.5">{s.label}</div>
-                </div>
-              ))}
-            </div>
+            {/*<div className="grid grid-cols-3 gap-4 mt-12 max-w-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>*/}
+            {/*  {[*/}
+            {/*    { val: 352, unit: 'Ha', label: 'Areal Pemulihan' },*/}
+            {/*    { val: 513, unit: '', label: 'Partisipan' },*/}
+            {/*    { val: 17, unit: '', label: 'Desa Penyangga' },*/}
+            {/*  ].map((s, i) => (*/}
+            {/*    <div key={i} className="text-white">*/}
+            {/*      <div className="stat-number text-3xl">*/}
+            {/*        <CountUp value={s.val} />*/}
+            {/*        <span className="text-lg text-mangrove-200 ml-1">{s.unit}</span>*/}
+            {/*      </div>*/}
+            {/*      <div className="text-xs text-white/60 font-medium mt-0.5">{s.label}</div>*/}
+            {/*    </div>*/}
+            {/*  ))}*/}
+            {/*</div>*/}
           </div>
         </div>
 
@@ -82,13 +81,13 @@ export function HomePage({ onNavigate }: { onNavigate: (p: Page) => void }) {
         <div className="container-page">
           <div className="text-center mb-12">
             <span className="badge bg-mangrove-100 text-mangrove-700 mb-3">Ringkasan Kinerja</span>
-            <h2 className="section-title">Indikator Kinerja Utama</h2>
+            <h2 className="section-title">Program Kami</h2>
             <p className="text-mangrove-500 mt-2 max-w-xl mx-auto">Capaian program Semester I Tahun 2026 (Januari–Juni)</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 item">
             {KPI_DATA.map((kpi) => (
-              <StatCard
+              <ProgramCard
                 key={kpi.id}
                 label={kpi.label}
                 value={kpi.value}
@@ -196,7 +195,7 @@ export function HomePage({ onNavigate }: { onNavigate: (p: Page) => void }) {
 
           <div className="grid lg:grid-cols-4 gap-5">
             {[
-              { step: '01', icon: <MapPin />, title: 'Input', desc: 'Kerjasama RI–Jerman, kelembagaan BBKSDA, baseline 352 Ha & 17 desa' },
+              { step: '01', icon: <MapPin />, title: 'Input', desc: 'Kerjasama RI–Jerman, kelembagaan BBKSDA' },
               { step: '02', icon: <Sprout />, title: 'Process', desc: 'Restorasi fisik, silvikutur adaptif, patroli bersama, GEDSI & FPIC' },
               { step: '03', icon: <BarChart3 />, title: 'Output', desc: 'Portal pengetahuan, dashboard real-time, sistem pelaporan transparan' },
               { step: '04', icon: <TrendingUp />, title: 'Impact', desc: 'Pemulihan hidrologi, blue carbon, partisipasi inklusif masyarakat' },
@@ -255,11 +254,13 @@ function BarChart3({ className }: { className?: string }) {
   );
 }
 
-function BookOpen({ className }: { className?: string }) {
+function OpenPage({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-    </svg>
+      <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+           width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M18 14v4.833A1.166 1.166 0 0 1 16.833 20H5.167A1.167 1.167 0 0 1 4 18.833V7.167A1.166 1.166 0 0 1 5.167 6h4.618m4.447-2H20v5.768m-7.889 2.121 7.778-7.778"/>
+      </svg>
+
   );
 }
