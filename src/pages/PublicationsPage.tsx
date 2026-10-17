@@ -15,7 +15,7 @@ export function PublicationsPage() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setForm({ name: '', email: '', message: '' });
+      setForm({ name: '', email: '', message: '', tujuan: '' });
     }, 3000);
   };
 

@@ -3,6 +3,7 @@ import {
   GaugeChart, BarChart, DonutChart, HorizontalBarChart, StackedColumnChart,
   ProgressBar, BulletChart, PieChart, HeatmapGrid, StatCard, CountUp
 } from '@/components/charts';
+import { DashboardImageCarousel } from '@/components/DashboardImageCarousel';
 import {
   MONITORING_PERTUMBUHAN, MONITORING_PEMELIHARAAN, GULUDAN_MINI,
   GENDER_DATA, PENERIMA_MANFAAT, KTH_LIST,
@@ -11,6 +12,8 @@ import {
   MODIFIKASI_TANGGUL, ANGGARAN,
   RESORT_LOCATIONS, PENANAMAN_DATA, PEMELIHARAAN_DATA, PENYELESAIAN_KEGIATAN,
   INVESTASI_KELOMPOK, SEKOLAH_LAPANG, IMAGES,
+  DASHBOARD_GALLERY_TAB1, DASHBOARD_GALLERY_TAB2,
+  DASHBOARD_GALLERY_TAB3, DASHBOARD_GALLERY_TAB4,
 } from '@/data/mockData';
 import {
   Sprout, TrendingUp, Users, Shield, Bird, Waves, Wallet, TreePine, MapPin,
@@ -126,6 +129,12 @@ function Tab1() {
           <p className="text-sm text-mangrove-500">Progres fisik restorasi vegetasi dan teknik silvikutur adaptif</p>
         </div>
       </div>
+
+      {/* Visual Image Carousel: Penanaman & Pemeliharaan */}
+      <DashboardImageCarousel
+        title="Dokumentasi Penanaman & Pemeliharaan"
+        images={DASHBOARD_GALLERY_TAB1}
+      />
 
       <FilterBar filters={[
         { label: 'Tahun Tanam', options: ['2024', '2025', '2026'] },
@@ -423,6 +432,12 @@ function Tab2() {
         </div>
       </div>
 
+      {/* Visual Image Carousel: Pemberdayaan Masyarakat & GEDSI */}
+      <DashboardImageCarousel
+        title="Dokumentasi Pemberdayaan & GEDSI"
+        images={DASHBOARD_GALLERY_TAB2}
+      />
+
       <FilterBar filters={[
         { label: 'Desa Penyangga', options: ['Pematang Cengal', 'Paluh Kurau', 'Selotong', 'Secanggang', 'Tapak Kuda'] },
         { label: 'Kelompok KTH', options: KTH_LIST.map(k => k.nama) },
@@ -588,6 +603,12 @@ function Tab3() {
         </div>
       </div>
 
+      {/* Visual Image Carousel: SMART Patrol */}
+      <DashboardImageCarousel
+        title="Dokumentasi SMART Patrol & Pengamanan"
+        images={DASHBOARD_GALLERY_TAB3}
+      />
+
       <FilterBar filters={[
         { label: 'Tahun', options: ['2022', '2023', '2024', '2025', '2025'] },
         { label: 'Bulan', options: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni'] },
@@ -729,23 +750,29 @@ function Tab4() {
         </div>
       </div>
 
+      {/* Visual Image Carousel: Satwa & Biodiversitas */}
+      <DashboardImageCarousel
+        title="Dokumentasi Satwa & Keanekaragaman Hayati"
+        images={DASHBOARD_GALLERY_TAB4}
+      />
+
       {/* Filter Tabs */}
-      {/* <div className="flex gap-2">
+      <div className="flex gap-2">
         {(['semua', 'flora', 'fauna'] as const).map(f => (
           <button
             key={f}
             onClick={() => setActiveFilter(f)}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
-              activeFilter === f ? 'bg-mangrove-600 text-white' : 'bg-mangrove-50 text-mangrove-600 hover:bg-mangrove-100'
+              activeFilter === f ? 'bg-mangrove-600 text-white shadow-sm' : 'bg-white border border-mangrove-100 text-mangrove-600 hover:bg-mangrove-50'
             }`}
           >
             {f === 'flora' && <Flower2 className="w-4 h-4" />}
             {f === 'fauna' && <Bird className="w-4 h-4" />}
             {f === 'semua' && <Leaf className="w-4 h-4" />}
-            {f === 'semua' ? 'Semua' : f.charAt(0).toUpperCase() + f.slice(1)}
+            {f === 'semua' ? 'Semua Kategori' : f.charAt(0).toUpperCase() + f.slice(1)}
           </button>
         ))}
-      </div>  */}
+      </div>
 
       {/* Summary Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">

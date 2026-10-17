@@ -509,3 +509,242 @@ export const GALLERY_ITEMS = [
   { id: 'g8', title: 'Mangrove Saat Senja', category: 'Foto Lapangan', img: 'mangroveSunset' },
   { id: 'g9', title: 'Bibit Mangrove Muda', category: 'Foto Lapangan', img: 'mangroveYoung' },
 ];
+
+export interface DashboardGalleryImage {
+  id: string;
+  title: string;
+  subtitle?: string;
+  location?: string;
+  category?: string;
+  date?: string;
+  url: string;
+}
+
+export const DASHBOARD_GALLERY_TAB1: DashboardGalleryImage[] = [
+  {
+    id: 't1-1',
+    title: 'Penanaman Bibit Rhizophora apiculata',
+    subtitle: 'Kegiatan restorasi vegetasi bersama kelompok tani hutan di zona pemulihan',
+    location: 'Resor II Tapak Kuda',
+    category: 'Restorasi Fisik',
+    date: 'Mei 2026',
+    url: IMAGES.mangrovePlanting,
+  },
+  {
+    id: 't1-2',
+    title: 'Aplikasi Metode Guludan Mini Adaptif',
+    subtitle: 'Solusi penanaman bibit di substrat lumpur dalam dan genangan pasang tinggi',
+    location: 'Resor I Karang Gading',
+    category: 'Silvikutur Adaptif',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't1-3',
+    title: 'Persemaian Bibit Mangrove KTH',
+    subtitle: 'Kesiapan 45.000 bibit mangrove unggul pada bedeng semai masyarakat',
+    location: 'Desa Selotong',
+    category: 'Pembibitan',
+    date: 'April 2026',
+    url: IMAGES.mangroveYoung,
+  },
+  {
+    id: 't1-4',
+    title: 'Pembersihan Lumut & Pemeliharaan Tahun I',
+    subtitle: 'Perawatan berkala pencegahan penempelan lumut sutra pada batang muda bibit',
+    location: 'Resor III Selotong',
+    category: 'Pemeliharaan',
+    date: 'Juni 2026',
+    url: IMAGES.mangrovePlanting2,
+  },
+  {
+    id: 't1-5',
+    title: 'Monitoring Pertumbuhan Morfometri Anakan',
+    subtitle: 'Pengukuran periodik persen tumbuh, tinggi anakan, dan pertambahan helai daun',
+    location: 'Plot Permanen Resor II',
+    category: 'Monitoring',
+    date: 'Juli 2026',
+    url: IMAGES.mangroveRootsLagoon,
+  },
+  {
+    id: 't1-6',
+    title: 'Normalisasi Tanggul Tambak & Sirkulasi Pasang',
+    subtitle: 'Pemulihan rezim hidrologi alami air pasang surut di bekas tambak liar',
+    location: 'Areal 202 Ha KGLTL',
+    category: 'Hidrologi',
+    date: 'Mei 2026',
+    url: IMAGES.mangroveRoots,
+  },
+];
+
+export const DASHBOARD_GALLERY_TAB2: DashboardGalleryImage[] = [
+  {
+    id: 't2-1',
+    title: 'Pelatihan Kelembagaan Kelompok Tani Hutan (KTH)',
+    subtitle: 'Penguatan tata kelola organisasi dan kemandirian pengurus kelompok tani desa',
+    location: 'Desa Pematang Cengal',
+    category: 'Penguatan Kapasitas',
+    date: 'Mei 2026',
+    url: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-2',
+    title: 'Partisipasi Inklusif Perempuan Pesisir (GEDSI)',
+    subtitle: 'Keterlibatan 104 perempuan pesisir dalam perbibitan dan pemeliharaan mangrove',
+    location: 'Desa Paluh Kurau',
+    category: 'Inklusi Gender & GEDSI',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-3',
+    title: 'Sekolah Lapang Konservasi Pesisir',
+    subtitle: 'Transfer pengetahuan silvofishery dan ekologi mangrove kepada generasi muda',
+    location: 'Balai Warga KGLTL',
+    category: 'Edukasi Lapang',
+    date: 'Maret 2026',
+    url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-4',
+    title: 'Pemberdayaan Ekonomi Nelayan & Petani',
+    subtitle: 'Dukungan perlengkapan kerja dan modal usaha berkelanjutan bagi warga dampingan',
+    location: 'Desa Tapak Kuda',
+    category: 'Ekonomi Produktif',
+    date: 'April 2026',
+    url: 'https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-5',
+    title: 'Pengembangan Produk Olahan Hasil Mangrove',
+    subtitle: 'Inovasi olahan pangan lokal, teh mangrove, dan sirup dari kelompok binaan KTH',
+    location: 'Sentra UMKM Paluh Kurau',
+    category: 'UMKM Hijau',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-6',
+    title: 'Rembuk Kemitraan Konservasi Desa',
+    subtitle: 'Musyawarah desa penyusunan Perjanjian Kerja Sama kemitraan konservasi BBKSDA',
+    location: 'Desa Secanggang',
+    category: 'Kemitraan Konservasi',
+    date: 'Februari 2026',
+    url: IMAGES.mangroveFamily,
+  },
+];
+
+export const DASHBOARD_GALLERY_TAB3: DashboardGalleryImage[] = [
+  {
+    id: 't3-1',
+    title: 'Patroli Perairan Alur Sungai & Estuari Paluh',
+    subtitle: 'Penyisiran alur air perbatasan suaka margasatwa dengan armada speedboat patroli',
+    location: 'Resor II Tapak Kuda',
+    category: 'Patroli Perairan',
+    date: 'Juli 2026',
+    url: IMAGES.mangroveRiver,
+  },
+  {
+    id: 't3-2',
+    title: 'Pencatatan Temuan Lapangan dengan SMART Mobile',
+    subtitle: 'Pencatatan geospasial real-time koordinat flora, fauna, dan ancaman kawasan',
+    location: 'Grid 4 Sektor Selatan',
+    category: 'SMART Patrol',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't3-3',
+    title: 'Inspeksi Jalur Boardwalk & Menara Pantau',
+    subtitle: 'Pemeriksaan integritas jalur pengawasan darat di sekitar pos resor terpadu',
+    location: 'Resor I Karang Gading',
+    category: 'Pengawasan Darat',
+    date: 'Mei 2026',
+    url: IMAGES.mangroveBoardwalk,
+  },
+  {
+    id: 't3-4',
+    title: 'Pemetaan Udara & Verifikasi Citra Drone',
+    subtitle: 'Deteksi dini perubahan tutupan tajuk dan pemantauan batas alami mangrove',
+    location: 'Delta Muara KGLTL',
+    category: 'Survei Udara',
+    date: 'Juni 2026',
+    url: IMAGES.mangroveIsland,
+  },
+  {
+    id: 't3-5',
+    title: 'Dermaga Apung & Posko Resor Terpadu',
+    subtitle: 'Pangkalan kesiapsiagaan tim patroli pengamanan hutan gabungan BBKSDA dan MMP',
+    location: 'Dermaga Resor II',
+    category: 'Infrastruktur Pengamanan',
+    date: 'April 2026',
+    url: IMAGES.mangrovePier,
+  },
+  {
+    id: 't3-6',
+    title: 'Patroli Tapal Batas Terluar Pesisir',
+    subtitle: 'Pencegahan aktivitas penyerobotan lahan dan pemasangan rambu perlindungan',
+    location: 'Garis Pantai Karang Gading',
+    category: 'Perlindungan Pesisir',
+    date: 'Juli 2026',
+    url: IMAGES.mangroveCoast,
+  },
+];
+
+export const DASHBOARD_GALLERY_TAB4: DashboardGalleryImage[] = [
+  {
+    id: 't4-1',
+    title: 'Konservasi & Perlindungan Tuntong Laut',
+    subtitle: 'Monitoring satwa dilindungi Batagur borneoensis di habitat estuari dan pasir pantai',
+    location: 'Pantai Pasir KGLTL',
+    category: 'Satwa Kritis (CR)',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-2',
+    title: 'Habitat Avifauna & Burung Pantai Migran',
+    subtitle: 'Pencatatan kawanan burung kuntul karang dan trinil lumpur saat pasang surut',
+    location: 'Laguna Karang Gading',
+    category: 'Ornitologi',
+    date: 'Mei 2026',
+    url: 'https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-3',
+    title: 'Primata Kera Ekor Panjang (Macaca fascicularis)',
+    subtitle: 'Kelompok primata alami penghuni tajuk rimbun hutan rawa mangrove',
+    location: 'Hutan Mangrove Resor III',
+    category: 'Mamalia Liar',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-4',
+    title: 'Kepiting Bakau (Scylla serrata)',
+    subtitle: 'Bioindikator kesuburan lumpur mangrove dan komoditas perikanan bernilai tinggi',
+    location: 'Zona Sedimen Aluvial',
+    category: 'Krustasea Mangrove',
+    date: 'April 2026',
+    url: 'https://images.unsplash.com/photo-1533518463841-d62e1fc91373?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-5',
+    title: 'Burung Raja Udang / Kingfisher Pesisir',
+    subtitle: 'Spesies pemburu ikan khas tepian sungai mangrove yang mencolok dan gesit',
+    location: 'Percabangan Pohon Api-api',
+    category: 'Avifauna',
+    date: 'Mei 2026',
+    url: 'https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-6',
+    title: 'Keanekaragaman Flora Bruguiera & Avicennia',
+    subtitle: 'Adaptasi perakaran napas pneumatofora khas vegetasi mangrove tropis',
+    location: 'Hutan Pasang Surut Selotong',
+    category: 'Floristik Mangrove',
+    date: 'Juni 2026',
+    url: IMAGES.mangroveRootsWater,
+  },
+];
+
