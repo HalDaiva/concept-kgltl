@@ -41,7 +41,7 @@ export function DashboardPage() {
         <div className="container-page">
           <span className="badge bg-white/10 text-mangrove-200 border border-white/20 mb-3">Data Center</span>
           <h1 className="font-display text-3xl sm:text-4xl font-extrabold">Dashboard Interaktif</h1>
-          <p className="text-mangrove-300 mt-2">Pemantauan terintegrasi capaian Semester I Tahun 2026</p>
+          <p className="text-mangrove-300 mt-2">Pemantauan terintegrasi capaian</p>
         </div>
       </section>
 
