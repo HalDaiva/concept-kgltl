@@ -4,7 +4,7 @@ import { PUBLICATIONS, GALLERY_ITEMS, IMAGES } from '@/data/mockData';
 
 export function PublicationsPage() {
   const [galleryFilter, setGalleryFilter] = useState('all');
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', message: '', tujuan: 'pendidikan' });
   const [submitted, setSubmitted] = useState(false);
 
   const categories = ['all', 'Drone', 'Foto Lapangan'];
@@ -15,7 +15,7 @@ export function PublicationsPage() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setForm({ name: '', email: '', message: '' });
+      setForm({ name: '', email: '', message: '', tujuan: '' });
     }, 3000);
   };
 
@@ -28,7 +28,7 @@ export function PublicationsPage() {
         <div className="absolute inset-0 flex items-end pb-10">
           <div className="container-page">
             <span className="badge bg-white/10 backdrop-blur text-white border border-white/20 mb-4">Publikasi & Kontak</span>
-            <h1 className="font-display text-3xl sm:text-5xl font-extrabold text-white">Laporan, Galeri & Sekretariat</h1>
+            <h1 className="font-display text-3xl sm:text-5xl font-extrabold text-white">Publikasi, Galeri & Sekretariat</h1>
           </div>
         </div>
       </section>
@@ -39,7 +39,7 @@ export function PublicationsPage() {
           <div className="flex items-center gap-3 mb-8">
             <FileText className="w-6 h-6 text-mangrove-600" />
             <div>
-              <h2 className="section-title">Laporan Berkala</h2>
+              <h2 className="section-title">Publikasi Berkala</h2>
               <p className="text-sm text-mangrove-500">Semester I 2026 & arsip laporan</p>
             </div>
           </div>
@@ -161,7 +161,7 @@ export function PublicationsPage() {
             </div>
 
             {/* Contact form */}
-            <div className="card p-6">
+            <div className="card p-6 h-fit">
               <h3 className="font-display text-lg font-bold text-mangrove-900 mb-1">Pendaftaran Kunjungan</h3>
               <p className="text-sm text-mangrove-500 mb-6">Isi formulir untuk mendaftar kunjungan pembelajaran</p>
 
@@ -198,6 +198,23 @@ export function PublicationsPage() {
                     />
                   </div>
                   <div>
+                    <label className="text-sm font-medium text-mangrove-700 block mb-1.5">Tujuan</label>
+                    <select onChange={(e) => setForm({ ...form, tujuan: e.target.value })} className="w-full px-3 py-2 rounded-lg border border-mangrove-200 text-sm text-mangrove-700 focus:outline-none focus:border-mangrove-400 bg-white">
+                      <option value="pendidikan">Pendidikan</option>
+                      <option value="penelitian">Penelitian</option>
+                      <option value="wisata">Wisata Alam</option>
+                      <option value="other">Lainnya</option>
+                    </select>
+                    {/* <select
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl border border-mangrove-200 focus:border-mangrove-400 focus:outline-none text-mangrove-900 transition-colors"
+                      placeholder="email@contoh.com"
+                    /> */}
+                  </div>
+                  { form.tujuan === "other" && <div>
                     <label className="text-sm font-medium text-mangrove-700 block mb-1.5">Pesan</label>
                     <textarea
                       required
@@ -205,9 +222,10 @@ export function PublicationsPage() {
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl border border-mangrove-200 focus:border-mangrove-400 focus:outline-none text-mangrove-900 transition-colors resize-none"
-                      placeholder="Jelaskan tujuan kunjungan atau pertanyaan Anda..."
+                      placeholder="Jelaskan tujuan kunjungan Anda..."
                     />
-                  </div>
+                  </div> }
+
                   <button type="submit" className="btn-primary w-full justify-center">
                     <Send className="w-4 h-4" />
                     Kirim Pendaftaran

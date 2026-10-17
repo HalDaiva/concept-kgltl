@@ -387,6 +387,46 @@ export function StatCard({ label, value, unit, icon, color = 'mangrove', detail,
   );
 }
 
+// Stat Card
+export function ProgramCard({ label, value, unit, icon, color = 'mangrove', detail, trend }: {
+  label: string; value: number; unit: string; icon: React.ReactNode; color?: string;
+  detail?: string; trend?: string;
+}) {
+  const colorMap: Record<string, string> = {
+    mangrove: 'from-mangrove-500 to-mangrove-700',
+    lagoon: 'from-lagoon-500 to-lagoon-700',
+    sand: 'from-sand-500 to-sand-600',
+    clay: 'from-clay-500 to-clay-600',
+    success: 'from-success-500 to-success-700',
+    warning: 'from-warning-500 to-warning-600',
+    error: 'from-error-500 to-error-600',
+  };
+
+  return (
+    <div className="card card-hover p-5 group">
+      <div className="flex items-start justify-between">
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${colorMap[color]} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform`}>
+          {icon}
+        </div>
+        {trend && (
+          <span className="badge bg-mangrove-50 text-mangrove-600">{trend}</span>
+        )}
+      </div>
+      <div className="mt-4">
+        {/*<div className="stat-number text-3xl text-mangrove-900">*/}
+        {/*  <CountUp value={value} decimals={value % 1 !== 0 ? 2 : 0} />*/}
+        {/*  <span className="text-lg text-mangrove-500 ml-1">{unit}</span>*/}
+        {/*</div>*/}
+
+        <div className="mt-4">
+          <p className="text-2xl font-extrabold text-mangrove-900 mt-1">{label}</p>
+          {detail && <p className="text-xs text-mangrove-400 mt-2">{detail}</p>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Pie Chart
 export function PieChart({ data, size = 180 }: {
   data: { label: string; value: number; color: string; percent: number }[];

@@ -21,24 +21,94 @@ export const IMAGES = {
 };
 
 export const KPI_DATA = [
-  { id: 'area', label: 'Total Luas Pemulihan', value: 352, unit: 'Ha', target: 352, percent: 100, icon: 'trees', color: 'mangrove', detail: '150 Ha + 202 Ha areal pemulihan' },
-  { id: 'participants', label: 'Total Partisipan', value: 513, unit: 'orang', target: 513, percent: 100, icon: 'users', color: 'lagoon', detail: '409 Laki-laki & 104 Perempuan' },
-  { id: 'budget', label: 'Realisasi Anggaran', value: 10.83, unit: '%', target: 100, percent: 10.83, icon: 'wallet', color: 'sand', detail: 'Rp2,49 M dari Rp23,05 M' },
-  { id: 'patrol', label: 'Frekuensi Patroli', value: 15, unit: 'kali', target: 36, percent: 41.67, icon: 'shield', color: 'clay', detail: 'Target tahunan: 36 kali' },
+  { id: 'area', label: 'Pemulihan Ekosistem', value: 352, unit: 'Ha', target: 352, percent: 100, icon: 'trees', color: 'mangrove', detail: '202 Ha areal pemulihan' },
+  { id: 'participants', label: 'Pemberdayaan Masyarakat', value: 513, unit: 'orang', target: 513, percent: 100, icon: 'users', color: 'lagoon', detail: '513 Orang Partisipan' },
+  { id: 'patrol', label: 'Perlindungan Mangrove', value: 15, unit: 'kali', target: 36, percent: 41.67, icon: 'shield', color: 'clay', detail: 'Dengan 4 Metode Inovatif' },
+];
+
+// Articles
+export const ARTICLES = [
+  {
+    id: 'a1',
+    title: 'Guludan Mini: Inovasi Restorasi Mangrove di Lokasi Genangan Dalam',
+    excerpt: 'Teknik guludan mini menggunakan keranjang bambu menjadi solusi adaptif untuk penanaman mangrove di area dengan genangan air yang dalam. Metode ini telah terbukti meningkatkan tingkat keberhasilan bibit secara signifikan.',
+    category: 'Teknik Restorasi',
+    date: '15 Juni 2026',
+    author: 'Tim Teknis BBKSDA Sumut',
+    readTime: '5 menit',
+    image: 'mangrovePlanting',
+    tags: ['Guludan Mini', 'Silvikutur', 'Penanaman'],
+  },
+  {
+    id: 'a2',
+    title: 'GEDSI dalam Konservasi: Memastikan Partisipasi Inklusif di SM KGLTL',
+    excerpt: 'Program Forest Programme VI menempatkan kesetaraan gender dan inklusi sosial sebagai pilar utama. Sebanyak 104 perempuan dari 17 desa penyangga telah aktif terlibat dalam kegiatan pemeliharaan dan patroli kawasan.',
+    category: 'Masyarakat & GEDSI',
+    date: '10 Juni 2026',
+    author: 'Fasilitator Desa KGLTL',
+    readTime: '7 menit',
+    image: 'mangroveFamily',
+    tags: ['GEDSI', 'Partisipasi', 'Gender'],
+  },
+  {
+    id: 'a3',
+    title: 'SMART Patrol: Pengawasan Berbasis Teknologi di Kawasan Mangrove',
+    excerpt: 'Sistem SMART Patrol memungkinkan pencatatan temuan lapangan secara real-time. Selama Semester I 2026, sebanyak 15 patroli berhasil dilaksanakan dengan 6 temuan gangguan kawasan yang semuanya telah ditangani.',
+    category: 'Patroli & Keamanan',
+    date: '5 Juni 2026',
+    author: 'Petugas Pengamanan BBKSDA',
+    readTime: '4 menit',
+    image: 'mangroveBangladesh',
+    tags: ['SMART Patrol', 'Pengamanan', 'Temuan'],
+  },
+  {
+    id: 'a4',
+    title: 'Tuntong Laut: Satwa Prioritas yang Membutuhkan Perhatian Khusus',
+    excerpt: 'Tuntong Laut (Batagur baska) merupakan salah satu reptil paling terancam punah di dunia. Program monitoring intensif dijadwalkan pada Semester II 2026 untuk mendata populasi dan habitat sarangnya di SM KGLTL.',
+    category: 'Satwa & Biodiversitas',
+    date: '28 Mei 2026',
+    author: 'Tim Biodiversitas',
+    readTime: '6 menit',
+    image: 'mangroveRoots',
+    tags: ['Tuntong Laut', 'Reptil', 'Konservasi'],
+  },
+  {
+    id: 'a5',
+    title: 'Padiatapa (FPIC): Membangun Persetujuan Masyarakat yang Bermakna',
+    excerpt: 'Proses Padiatapa telah berhasil dilaksanakan di 5 desa penyangga. Pendekatan ini memastikan bahwa seluruh kegiatan restorasi mendapat persetujuan penuh dari masyarakat sebelum implementasi.',
+    category: 'Komunitas',
+    date: '20 Mei 2026',
+    author: 'Tim Fasilitator Desa',
+    readTime: '5 menit',
+    image: 'mangroveScenery',
+    tags: ['FPIC', 'Padiatapa', 'Desa'],
+  },
+  {
+    id: 'a6',
+    title: 'Modifikasi Tanggul 12,81 Km: Memulihkan Hidrologi Mangrove',
+    excerpt: 'Kegiatan modifikasi tanggul dan saluran air sepanjang 12,81 kilometer telah berhasil diselesaikan 100%. Intervensi ini bertujuan memulihkan pola hidrologi alami yang mendukung regenerasi mangrove.',
+    category: 'Restorasi Fisik',
+    date: '12 Mei 2026',
+    author: 'Tim Teknis Lapangan',
+    readTime: '4 menit',
+    image: 'mangroveCoast',
+    tags: ['Hidrologi', 'Tanggul', 'Restorasi'],
+  },
 ];
 
 // Modul 1: Penanaman & Pemeliharaan
-export const PEMELIHARAAN_P1 = {
-  target: 202,
-  realisasi: 67.43,
-  percent: 33.38,
-  petak: ['LTLI.25.3.09', 'LTLI.25.3.10', 'LTLI.25.3.11', 'LTLI.25.3.12'],
-  tanggal: '22–27 Juni 2026',
-};
-
 export const MONITORING_PERTUMBUHAN = [
-  { blok: 'Blok 150 Ha', target: 150, realisasi: 150, percent: 100 },
-  { blok: 'Blok 202 Ha', target: 202, realisasi: 202, percent: 100 },
+  { blok: '2022', realisasi: 150 },
+  { blok: '2023', realisasi: 202 },
+  { blok: '2024', realisasi: 160 },
+  { blok: '2025', realisasi: 190 },
+];
+
+export const MONITORING_PEMELIHARAAN = [
+  { blok: '2022', realisasi: 200 },
+  { blok: '2023', realisasi: 160 },
+  { blok: '2024', realisasi: 195 },
+  { blok: '2025', realisasi: 220 },
 ];
 
 export const GULUDAN_MINI = {
@@ -49,42 +119,72 @@ export const GULUDAN_MINI = {
   desc: 'Konstruksi keranjang bambu diikat pancang, diisi lumpur & 60 bibit/unit untuk lokasi genangan air dalam.',
 };
 
-export const PETAK_PEMELIHARAAN = [
-  { id: 'LTLI.25.3.09', resor: 'Resor I Karang Gading', luas: 16.85, status: 'Selesai', persen: 100 },
-  { id: 'LTLI.25.3.10', resor: 'Resor I Karang Gading', luas: 16.85, status: 'Selesai', persen: 100 },
-  { id: 'LTLI.25.3.11', resor: 'Resor II Tapak Kuda', luas: 16.85, status: 'Sedang Berjalan', persen: 70 },
-  { id: 'LTLI.25.3.12', resor: 'Resor III Selotong', luas: 16.88, status: 'Sedang Berjalan', persen: 60 },
+// Resort location map data
+export const RESORT_LOCATIONS = [
+  {
+    id: 'r1',
+    nama: 'Resor I Karang Gading',
+    koordinat: { x: 35, y: 40 },
+    luas: 150,
+    kecamatan: 'Secanggang & Labuhan Deli',
+    kegiatan: ['Penanaman 150 Ha', 'Modifikasi Tanggul', 'Patroli Aktif'],
+    status: 'Aktif',
+  },
+  {
+    id: 'r2',
+    nama: 'Resor II Tapak Kuda',
+    koordinat: { x: 55, y: 55 },
+    luas: 120,
+    kecamatan: 'Tanjung Pura',
+    kegiatan: ['Penanaman 120 Ha', 'Pemeliharaan P1', 'Sekolah Lapang'],
+    status: 'Aktif',
+  },
+  {
+    id: 'r3',
+    nama: 'Resor III Selotong',
+    koordinat: { x: 68, y: 35 },
+    luas: 82,
+    kecamatan: 'Secanggang',
+    kegiatan: ['Penanaman 82 Ha', 'Restorasi Tambak', 'Patroli Aktif'],
+    status: 'Aktif',
+  },
 ];
 
-// Modul 2: Kelompok Masyarakat & GEDSI
+// Penanaman table
+export const PENANAMAN_DATA = [
+  { id: 'PT-001', tahun: 2025, resor: 'Resor I Karang Gading', luas: 150, metode: 'Guludan Mini', bibit: 9000, jenis: 'Rhizophora mucronata', status: 'Selesai', keterangan: 'Blok 150 Ha, 60 bibit/unit' },
+  { id: 'PT-002', tahun: 2026, resor: 'Resor II Tapak Kuda', luas: 120, metode: 'Guludan Mini', bibit: 7200, jenis: 'Avicennia marina', status: 'Selesai', keterangan: 'Guludan 6 keranjang/unit' },
+  { id: 'PT-003', tahun: 2026, resor: 'Resor III Selotong', luas: 82, metode: 'Tanam Langsung', bibit: 4920, jenis: 'Sonneratia caseolaris', status: 'Selesai', keterangan: 'Area pasang surut rendah' },
+  { id: 'PT-004', tahun: 2026, resor: 'Resor I Karang Gading', luas: 45, metode: 'Pembersihan Lumut', bibit: 2700, jenis: 'Rhizophora apiculata', status: 'Berjalan', keterangan: 'Penanaman tahap II' },
+];
+
+// Pemeliharaan table
+export const PEMELIHARAAN_DATA = [
+  { id: 'PM-001', resor: 'Resor I Karang Gading', tahunTanam: 2025, tahunPemeliharaan: 'P1', luas: 33.70, kegiatan: ['Pembersihan lumut', 'Penyulaman bibit mati', 'Pengecekan guludan'], pelaksana: 'KTH Harapan Indah', tanggal: '22-27 Jun 2026', status: 'Selesai' },
+  { id: 'PM-002', resor: 'Resor I Karang Gading', tahunTanam: 2025, tahunPemeliharaan: 'P1', luas: 33.70, kegiatan: ['Pembersihan gulma', 'Penyulaman', 'Monitoring pertumbuhan'], pelaksana: 'KTH Harapan Jaya', tanggal: '22-27 Jun 2026', status: 'Selesai' },
+  { id: 'PM-003', resor: 'Resor II Tapak Kuda', tahunTanam: 2025, tahunPemeliharaan: 'P1', luas: 33.70, kegiatan: ['Pembersihan lumut', 'Perbaikan guludan rusak', 'Monitoring'], pelaksana: 'KTH Mawar', tanggal: '10-15 Jul 2026', status: 'Berjalan' },
+  { id: 'PM-004', resor: 'Resor III Selotong', tahunTanam: 2025, tahunPemeliharaan: 'P1', luas: 33.73, kegiatan: ['Penyulaman bibit', 'Pembersihan sampah', 'Pengecekan pertumbuhan'], pelaksana: 'KTH Tumbuh Subur', tanggal: '10-15 Jul 2026', status: 'Berjalan' },
+  { id: 'PM-005', resor: 'Resor I Karang Gading', tahunTanam: 2024, tahunPemeliharaan: 'P2', luas: 50, kegiatan: ['Pemupukan', 'Pengendalian hama', 'Monitoring pertumbuhan lanjut'], pelaksana: 'KTH Harapan Indah', tanggal: 'Agt 2026', status: 'Dijadwalkan' },
+];
+
+// Penyelesaian Kegiatan Terbangun (replacing Pemusnahan Sawit Invasif in Tab1)
+export const PENYELESAIAN_KEGIATAN = [
+  { id: 'PK-001', kegiatan: 'Restorasi Tambak', luas: 45.5, resor: 'Resor III Selotong', tahun: 2026, metode: 'Pengerukan & Normalisasi', status: 'Selesai', percent: 100 },
+  { id: 'PK-002', kegiatan: 'Rehabilitasi Sawah Pesisir', luas: 30.0, resor: 'Resor I Karang Gading', tahun: 2026, metode: 'Guludan Mini', status: 'Selesai', percent: 100 },
+  { id: 'PK-003', kegiatan: 'Normalisasi Saluran Irigasi', luas: 12.81, resor: 'Resor II Tapak Kuda', tahun: 2026, metode: 'Eksavator Mekanik', status: 'Selesai', percent: 100 },
+  { id: 'PK-004', kegiatan: 'Pemusnahan Sawit Invasif', luas: 3.21, resor: 'Resor III Selotong', tahun: 2026, metode: 'Suntik Herbisida Glyphosate', status: 'Berjalan', percent: 1.47 },
+  { id: 'PK-005', kegiatan: 'Restorasi Padang Lamun', luas: 15.0, resor: 'Resor II Tapak Kuda', tahun: 2026, metode: 'Transplantasi Lamun', status: 'Dijadwalkan', percent: 0 },
+];
+
+// Modul 2: Pemberdayaan Masyarakat & GEDSI
 export const GENDER_DATA = [
-  { label: 'Laki-laki', value: 409, percent: 79.7, color: '#236a4e' },
-  { label: 'Perempuan', value: 104, percent: 20.3, color: '#3fa9c2' },
+  { label: 'Laki-laki', value: 409, percent: 79.7, color: '#236a4e', terlibatPenanaman: 280 },
+  { label: 'Perempuan', value: 104, percent: 20.3, color: '#3fa9c2', terlibatPenanaman: 67 },
 ];
 
 export const PENERIMA_MANFAAT = [
-  { kategori: 'Masyarakat', lakiLaki: 302, perempuan: 61 },
-  { kategori: 'Petugas (BBKSDA/Fasdes)', lakiLaki: 107, perempuan: 43 },
-];
-
-export const PERAN_DATA = [
-  { label: 'Masyarakat', value: 363, percent: 70.8, color: '#358463' },
-  { label: 'Petugas', value: 150, percent: 29.2, color: '#df8c2e' },
-];
-
-export const KEGIATAN_PESERTA = [
-  { kegiatan: 'Capacity Building GEDSI', peserta: 138, desa: 3 },
-  { kegiatan: 'Evaluasi Fasilitator Desa', peserta: 47, desa: 14 },
-  { kegiatan: 'Penyusunan Laporan Proyek', peserta: 45, desa: 17 },
-  { kegiatan: 'Pemeliharaan P1', peserta: 42, desa: 1 },
-  { kegiatan: 'Padiatapa (FPIC)', peserta: 60, desa: 5 },
-];
-
-export const SUB_KATEGORI = [
-  { label: 'Laki-laki Masyarakat', value: 302, percent: 58.9, color: '#236a4e' },
-  { label: 'Laki-laki Petugas', value: 107, percent: 20.9, color: '#54a180' },
-  { label: 'Perempuan Masyarakat', value: 61, percent: 11.9, color: '#3fa9c2' },
-  { label: 'Perempuan Petugas', value: 43, percent: 8.4, color: '#73c9da' },
+  { kategori: 'Laki-laki', terlibat: 302, tidakTerlibat: 61 },
+  { kategori: 'Perempuan', terlibat: 107, tidakTerlibat: 43 },
 ];
 
 export const KTH_LIST = [
@@ -94,48 +194,175 @@ export const KTH_LIST = [
   { nama: 'KTH Tumbuh Subur', desa: 'Tapak Kuda', anggota: 26, kegiatan: ['Padiatapa', 'Pemeliharaan P1'] },
 ];
 
-export const DESA_PADIATAPA = [
-  { nama: 'Pematang Cengal', kecamatan: 'Tanjung Pura', status: 'Selesai', tanggal: 'Mei 2026' },
-  { nama: 'Paluh Kurau', kecamatan: 'Hamparan Perak', status: 'Selesai', tanggal: 'Mei 2026' },
-  { nama: 'Selotong', kecamatan: 'Secanggang', status: 'Selesai', tanggal: 'Jun 2026' },
-  { nama: 'Secanggang', kecamatan: 'Secanggang', status: 'Selesai', tanggal: 'Jun 2026' },
-  { nama: 'Tapak Kuda', kecamatan: 'Tanjung Pura', status: 'Selesai', tanggal: 'Jun 2026' },
+// Investasi Kelompok Masyarakat
+export const INVESTASI_KELOMPOK = [
+  { id: 'IK-001', namaKelompok: 'KTH Harapan Indah', desa: 'Pematang Cengal', jenisInvestasi: 'Penggilingan Padi', nilai: 85000000, progress: 'Berkembang Baik', tahun: 2026 },
+  { id: 'IK-002', namaKelompok: 'KTH Harapan Jaya', desa: 'Pematang Cengal', jenisInvestasi: 'Budidaya Kepiting Bakau', nilai: 65000000, progress: 'Berkembang Baik', tahun: 2026 },
+  { id: 'IK-003', namaKelompok: 'KTH Mawar', desa: 'Tapak Kuda', jenisInvestasi: 'Ekowisata Mangrove', nilai: 120000000, progress: 'Kurang Berkembang', tahun: 2026 },
+  { id: 'IK-004', namaKelompok: 'KTH Tumbuh Subur', desa: 'Tapak Kuda', jenisInvestasi: 'Pengolahan Hasil Hutan Bukan Kayu', nilai: 45000000, progress: 'Belum Berkembang', tahun: 2026 },
+  { id: 'IK-005', namaKelompok: 'KTH Selotong Lestari', desa: 'Selotong', jenisInvestasi: 'Budidaya Udang Ramah Lingkungan', nilai: 95000000, progress: 'Berkembang Baik', tahun: 2026 },
 ];
 
-// Modul 3: SMART Patrol
+// Sekolah Lapang
+export const SEKOLAH_LAPANG = [
+  {
+    id: 'SL-001',
+    namaKegiatan: 'Pelatihan Teknik Guludan Mini & Penanaman Mangrove',
+    tanggal: '10 Maret 2026',
+    lokasi: 'Resor I Karang Gading',
+    peserta: ['KTH Harapan Indah', 'KTH Harapan Jaya'],
+    jumlahPeserta: 63,
+    image: 'mangrovePlanting',
+    deskripsi: 'Pelatihan teknis konstruksi guludan mini menggunakan keranjang bambu untuk lokasi genangan air dalam.',
+  },
+  {
+    id: 'SL-002',
+    namaKegiatan: 'Workshop GEDSI & Capacity Building',
+    tanggal: '25 Maret 2026',
+    lokasi: 'Desa Pematang Cengal',
+    peserta: ['KTH Mawar', 'KTH Tumbuh Subur', 'KTH Harapan Indah'],
+    jumlahPeserta: 92,
+    image: 'mangroveFamily',
+    deskripsi: 'Peningkatan kapasitas kelompok masyarakat tentang kesetaraan gender dalam kegiatan konservasi.',
+  },
+  {
+    id: 'SL-003',
+    namaKegiatan: 'Pelatihan SMART Patrol & Identifikasi Satwa',
+    tanggal: '5 April 2026',
+    lokasi: 'Resor II Tapak Kuda',
+    peserta: ['KTH Tumbuh Subur', 'KTH Mawar'],
+    jumlahPeserta: 57,
+    image: 'mangroveBangladesh',
+    deskripsi: 'Pelatihan penggunaan aplikasi SMART Patrol dan teknik identifikasi satwa liar mangrove.',
+  },
+  {
+    id: 'SL-004',
+    namaKegiatan: 'Praktik Pemeliharaan P1 & Monitoring Pertumbuhan',
+    tanggal: '22 Juni 2026',
+    lokasi: 'Resor I & II KGLTL',
+    peserta: ['KTH Harapan Indah', 'KTH Harapan Jaya', 'KTH Mawar', 'KTH Tumbuh Subur'],
+    jumlahPeserta: 120,
+    image: 'mangrovePlanting2',
+    deskripsi: 'Praktik lapangan pemeliharaan tahun pertama termasuk pembersihan lumut dan penyulaman bibit.',
+  },
+];
+
+// Modul 3: SMART Patrol (Grid-based)
 export const PATROL_DATA = {
   target: 36,
   capaian: 15,
   percent: 41.67,
-  triwulan: [
-    { triwulan: 'Triwulan I', capaian: 8, bulan: 'Jan–Mar' },
-    { triwulan: 'Triwulan II', capaian: 7, bulan: 'Apr–Jun' },
+  bulan: [
+    { bulan: 'Januari', capaian: 3 },
+    { bulan: 'Februari', capaian: 2 },
+    { bulan: 'Maret', capaian: 3 },
+    { bulan: 'April', capaian: 4 },
+    { bulan: 'Mei', capaian: 2 },
+    { bulan: 'Juni', capaian: 1 },
   ],
 };
 
-export const RESOR_PATROL = [
-  { nama: 'Resor I Karang Gading', patroli: 6, temuan: 3, status: 'Aktif' },
-  { nama: 'Resor II Tapak Kuda', patroli: 5, temuan: 2, status: 'Aktif' },
-  { nama: 'Resor III Selotong', patroli: 4, temuan: 1, status: 'Aktif' },
+export const GRID_PATROL = [
+  { nama: 'Grid 1', temuan: 3, status: 'Aktif', area: 'Zona Resor 1 (Karang Gading)' },
+  { nama: 'Grid 2', temuan: 1, status: 'Aktif', area: 'Zona Resor 2 (Tapak Kuda)' },
+  { nama: 'Grid 3', temuan: 2, status: 'Aktif', area: 'Zona Resor 1 (Karang Gading)' },
+  { nama: 'Grid 4', temuan: 0, status: 'Aktif', area: 'Zona Resor 1 (Karang Gading)' },
+  { nama: 'Grid 5', temuan: 1, status: 'Aktif', area: 'Zona Resor 3 (Selotong)' },
+  { nama: 'Grid 6', temuan: 2, status: 'Aktif', area: 'Zona Resor 1 (Karang Gading)' },
 ];
 
 export const PATROL_LOG = [
-  { id: 'P-001', tanggal: '12 Jan 2026', resor: 'Resor I Karang Gading', temuan: 'Perambahan lahan', status: 'Ditangani' },
-  { id: 'P-002', tanggal: '25 Jan 2026', resor: 'Resor II Tapak Kuda', temuan: 'Penebangan liar', status: 'Ditangani' },
-  { id: 'P-003', tanggal: '08 Feb 2026', resor: 'Resor III Selotong', temuan: 'Aman terkendali', status: 'Selesai' },
-  { id: 'P-004', tanggal: '15 Feb 2026', resor: 'Resor I Karang Gading', temuan: 'Pencurian kayu', status: 'Ditangani' },
-  { id: 'P-005', tanggal: '03 Mar 2026', resor: 'Resor II Tapak Kuda', temuan: 'Aman terkendali', status: 'Selesai' },
-  { id: 'P-006', tanggal: '20 Mar 2026', resor: 'Resor III Selotong', temuan: 'Penambangan liar', status: 'Dalam proses' },
-  { id: 'P-007', tanggal: '10 Apr 2026', resor: 'Resor I Karang Gading', temuan: 'Aman terkendali', status: 'Selesai' },
-  { id: 'P-008', tanggal: '22 Apr 2026', resor: 'Resor II Tapak Kuda', temuan: 'Perambahan lahan', status: 'Ditangani' },
+  {
+    id: 'P-001',
+    tanggal: '12 Jan 2026',
+    grid: 'Grid 1',
+    area: 'Resor 1 (Karang Gading)',
+    temuanList: [
+      { tipe: 'Gangguan Kawasan', deskripsi: 'Perambahan lahan oleh oknum', status: 'Ditangani' },
+      { tipe: 'Flora', deskripsi: 'Rhizophora mucronata — kondisi baik, 95% hidup', status: 'Terdokumentasi' },
+    ],
+  },
+  {
+    id: 'P-002',
+    tanggal: '25 Jan 2026',
+    grid: 'Grid 3',
+    area: 'Resor 1 (Karang Gading)',
+    temuanList: [
+      { tipe: 'Gangguan Kawasan', deskripsi: 'Penebangan liar pohon bakau', status: 'Ditangani' },
+    ],
+  },
+  {
+    id: 'P-003',
+    tanggal: '08 Feb 2026',
+    grid: 'Grid 5',
+    area: 'Resor 1 (Karang Gading)',
+    temuanList: [
+      { tipe: 'Fauna', deskripsi: 'Cangking Abu (Egretta garzetta) — 12 ekor', status: 'Terdokumentasi' },
+      { tipe: 'Fauna', deskripsi: 'Monyet Ekor Panjang — 5 ekor', status: 'Terdokumentasi' },
+    ],
+  },
+  {
+    id: 'P-004',
+    tanggal: '15 Feb 2026',
+    grid: 'Grid 1',
+    area: 'Resor 1 (Karang Gading)',
+    temuanList: [
+      { tipe: 'Gangguan Kawasan', deskripsi: 'Pencurian kayu mangrove', status: 'Proses Hukum' },
+    ],
+  },
+  {
+    id: 'P-005',
+    tanggal: '03 Mar 2026',
+    grid: 'Grid 4',
+    area: 'Resor 1 (Karang Gading)',
+    temuanList: [
+      { tipe: 'Flora', deskripsi: 'Avicennia marina — pertumbuhan normal', status: 'Terdokumentasi' },
+      { tipe: 'Fauna', deskripsi: 'Biawak Air (Varanus salvator) — 2 ekor', status: 'Terdokumentasi' },
+    ],
+  },
+  {
+    id: 'P-006',
+    tanggal: '20 Mar 2026',
+    grid: 'Grid 6',
+    area: 'Resor 1 (Karang Gading)',
+    temuanList: [
+      { tipe: 'Gangguan Kawasan', deskripsi: 'Penambangan pasir ilegal', status: 'Ditangani' },
+    ],
+  },
+  {
+    id: 'P-007',
+    tanggal: '10 Apr 2026',
+    grid: 'Grid 2',
+    area: 'Resor 1 (Karang Gading)',
+    temuanList: [
+      { tipe: 'Flora', deskripsi: 'Kondisi vegetasi baik, tidak ada gangguan', status: 'Terdokumentasi' },
+    ],
+  },
+  {
+    id: 'P-008',
+    tanggal: '22 Apr 2026',
+    grid: 'Grid 3',
+    area: 'Resor 1 (Karang Gading)',
+    temuanList: [
+      { tipe: 'Gangguan Kawasan', deskripsi: 'Perambahan lahan untuk tambak ilegal', status: 'Ditangani' },
+      { tipe: 'Fauna', deskripsi: 'Kepiting Bakau — populasi stabil', status: 'Terdokumentasi' },
+    ],
+  },
 ];
 
-// Modul 4: Monitoring Satwa
-export const SATWA_DATA = [
+// Modul 4: Monitoring Satwa & Biodiversitas
+export const FAUNA_DATA = [
   { kelompok: 'Burung Air', jumlah: 24, contoh: 'Cangking Abu, Kuntul Kerbau, Sipil', color: '#236a4e' },
   { kelompok: 'Reptil', jumlah: 8, contoh: 'Biawak Air, Ular Sendok, Buaya Muara', color: '#3fa9c2' },
   { kelompok: 'Mamalia', jumlah: 5, contoh: 'Monyet Ekor Panjang, Linsang', color: '#df8c2e' },
   { kelompok: 'Biota Perairan', jumlah: 17, contoh: 'Kepiting Bakau, Udang, Ikan Gelodok', color: '#b8634f' },
+];
+
+export const FLORA_DATA = [
+  { kelompok: 'Mangrove Sejati', jumlah: 12, contoh: 'Rhizophora mucronata, Avicennia marina, Sonneratia caseolaris', color: '#236a4e' },
+  { kelompok: 'Mangrove Asosiasi', jumlah: 7, contoh: 'Nypa fruticans, Acrostichum aureum, Hibiscus tiliaceus', color: '#54a180' },
+  { kelompok: 'Tumbuhan Pantai', jumlah: 9, contoh: 'Casuarina equisetifolia, Barringtonia asiatica, Calophyllum inophyllum', color: '#3fa9c2' },
+  { kelompok: 'Tumbuhan Invasif', jumlah: 3, contoh: 'Elaeis guineensis (Sawit), Acacia mangium', color: '#b8634f' },
 ];
 
 export const TUNTONG_STATUS = {
@@ -283,8 +510,241 @@ export const GALLERY_ITEMS = [
   { id: 'g9', title: 'Bibit Mangrove Muda', category: 'Foto Lapangan', img: 'mangroveYoung' },
 ];
 
-// Quarterly participant data
-export const QUARTERLY_GENDER = [
-  { triwulan: 'TW I', perempuan: 21, lakiLaki: 93 },
-  { triwulan: 'TW II', perempuan: 83, lakiLaki: 316 },
+export interface DashboardGalleryImage {
+  id: string;
+  title: string;
+  subtitle?: string;
+  location?: string;
+  category?: string;
+  date?: string;
+  url: string;
+}
+
+export const DASHBOARD_GALLERY_TAB1: DashboardGalleryImage[] = [
+  {
+    id: 't1-1',
+    title: 'Penanaman Bibit Rhizophora apiculata',
+    subtitle: 'Kegiatan restorasi vegetasi bersama kelompok tani hutan di zona pemulihan',
+    location: 'Resor II Tapak Kuda',
+    category: 'Restorasi Fisik',
+    date: 'Mei 2026',
+    url: IMAGES.mangrovePlanting,
+  },
+  {
+    id: 't1-2',
+    title: 'Aplikasi Metode Guludan Mini Adaptif',
+    subtitle: 'Solusi penanaman bibit di substrat lumpur dalam dan genangan pasang tinggi',
+    location: 'Resor I Karang Gading',
+    category: 'Silvikutur Adaptif',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't1-3',
+    title: 'Persemaian Bibit Mangrove KTH',
+    subtitle: 'Kesiapan 45.000 bibit mangrove unggul pada bedeng semai masyarakat',
+    location: 'Desa Selotong',
+    category: 'Pembibitan',
+    date: 'April 2026',
+    url: IMAGES.mangroveYoung,
+  },
+  {
+    id: 't1-4',
+    title: 'Pembersihan Lumut & Pemeliharaan Tahun I',
+    subtitle: 'Perawatan berkala pencegahan penempelan lumut sutra pada batang muda bibit',
+    location: 'Resor III Selotong',
+    category: 'Pemeliharaan',
+    date: 'Juni 2026',
+    url: IMAGES.mangrovePlanting2,
+  },
+  {
+    id: 't1-5',
+    title: 'Monitoring Pertumbuhan Morfometri Anakan',
+    subtitle: 'Pengukuran periodik persen tumbuh, tinggi anakan, dan pertambahan helai daun',
+    location: 'Plot Permanen Resor II',
+    category: 'Monitoring',
+    date: 'Juli 2026',
+    url: IMAGES.mangroveRootsLagoon,
+  },
+  {
+    id: 't1-6',
+    title: 'Normalisasi Tanggul Tambak & Sirkulasi Pasang',
+    subtitle: 'Pemulihan rezim hidrologi alami air pasang surut di bekas tambak liar',
+    location: 'Areal 202 Ha KGLTL',
+    category: 'Hidrologi',
+    date: 'Mei 2026',
+    url: IMAGES.mangroveRoots,
+  },
 ];
+
+export const DASHBOARD_GALLERY_TAB2: DashboardGalleryImage[] = [
+  {
+    id: 't2-1',
+    title: 'Pelatihan Kelembagaan Kelompok Tani Hutan (KTH)',
+    subtitle: 'Penguatan tata kelola organisasi dan kemandirian pengurus kelompok tani desa',
+    location: 'Desa Pematang Cengal',
+    category: 'Penguatan Kapasitas',
+    date: 'Mei 2026',
+    url: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-2',
+    title: 'Partisipasi Inklusif Perempuan Pesisir (GEDSI)',
+    subtitle: 'Keterlibatan 104 perempuan pesisir dalam perbibitan dan pemeliharaan mangrove',
+    location: 'Desa Paluh Kurau',
+    category: 'Inklusi Gender & GEDSI',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-3',
+    title: 'Sekolah Lapang Konservasi Pesisir',
+    subtitle: 'Transfer pengetahuan silvofishery dan ekologi mangrove kepada generasi muda',
+    location: 'Balai Warga KGLTL',
+    category: 'Edukasi Lapang',
+    date: 'Maret 2026',
+    url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-4',
+    title: 'Pemberdayaan Ekonomi Nelayan & Petani',
+    subtitle: 'Dukungan perlengkapan kerja dan modal usaha berkelanjutan bagi warga dampingan',
+    location: 'Desa Tapak Kuda',
+    category: 'Ekonomi Produktif',
+    date: 'April 2026',
+    url: 'https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-5',
+    title: 'Pengembangan Produk Olahan Hasil Mangrove',
+    subtitle: 'Inovasi olahan pangan lokal, teh mangrove, dan sirup dari kelompok binaan KTH',
+    location: 'Sentra UMKM Paluh Kurau',
+    category: 'UMKM Hijau',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't2-6',
+    title: 'Rembuk Kemitraan Konservasi Desa',
+    subtitle: 'Musyawarah desa penyusunan Perjanjian Kerja Sama kemitraan konservasi BBKSDA',
+    location: 'Desa Secanggang',
+    category: 'Kemitraan Konservasi',
+    date: 'Februari 2026',
+    url: IMAGES.mangroveFamily,
+  },
+];
+
+export const DASHBOARD_GALLERY_TAB3: DashboardGalleryImage[] = [
+  {
+    id: 't3-1',
+    title: 'Patroli Perairan Alur Sungai & Estuari Paluh',
+    subtitle: 'Penyisiran alur air perbatasan suaka margasatwa dengan armada speedboat patroli',
+    location: 'Resor II Tapak Kuda',
+    category: 'Patroli Perairan',
+    date: 'Juli 2026',
+    url: IMAGES.mangroveRiver,
+  },
+  {
+    id: 't3-2',
+    title: 'Pencatatan Temuan Lapangan dengan SMART Mobile',
+    subtitle: 'Pencatatan geospasial real-time koordinat flora, fauna, dan ancaman kawasan',
+    location: 'Grid 4 Sektor Selatan',
+    category: 'SMART Patrol',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't3-3',
+    title: 'Inspeksi Jalur Boardwalk & Menara Pantau',
+    subtitle: 'Pemeriksaan integritas jalur pengawasan darat di sekitar pos resor terpadu',
+    location: 'Resor I Karang Gading',
+    category: 'Pengawasan Darat',
+    date: 'Mei 2026',
+    url: IMAGES.mangroveBoardwalk,
+  },
+  {
+    id: 't3-4',
+    title: 'Pemetaan Udara & Verifikasi Citra Drone',
+    subtitle: 'Deteksi dini perubahan tutupan tajuk dan pemantauan batas alami mangrove',
+    location: 'Delta Muara KGLTL',
+    category: 'Survei Udara',
+    date: 'Juni 2026',
+    url: IMAGES.mangroveIsland,
+  },
+  {
+    id: 't3-5',
+    title: 'Dermaga Apung & Posko Resor Terpadu',
+    subtitle: 'Pangkalan kesiapsiagaan tim patroli pengamanan hutan gabungan BBKSDA dan MMP',
+    location: 'Dermaga Resor II',
+    category: 'Infrastruktur Pengamanan',
+    date: 'April 2026',
+    url: IMAGES.mangrovePier,
+  },
+  {
+    id: 't3-6',
+    title: 'Patroli Tapal Batas Terluar Pesisir',
+    subtitle: 'Pencegahan aktivitas penyerobotan lahan dan pemasangan rambu perlindungan',
+    location: 'Garis Pantai Karang Gading',
+    category: 'Perlindungan Pesisir',
+    date: 'Juli 2026',
+    url: IMAGES.mangroveCoast,
+  },
+];
+
+export const DASHBOARD_GALLERY_TAB4: DashboardGalleryImage[] = [
+  {
+    id: 't4-1',
+    title: 'Konservasi & Perlindungan Tuntong Laut',
+    subtitle: 'Monitoring satwa dilindungi Batagur borneoensis di habitat estuari dan pasir pantai',
+    location: 'Pantai Pasir KGLTL',
+    category: 'Satwa Kritis (CR)',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-2',
+    title: 'Habitat Avifauna & Burung Pantai Migran',
+    subtitle: 'Pencatatan kawanan burung kuntul karang dan trinil lumpur saat pasang surut',
+    location: 'Laguna Karang Gading',
+    category: 'Ornitologi',
+    date: 'Mei 2026',
+    url: 'https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-3',
+    title: 'Primata Kera Ekor Panjang (Macaca fascicularis)',
+    subtitle: 'Kelompok primata alami penghuni tajuk rimbun hutan rawa mangrove',
+    location: 'Hutan Mangrove Resor III',
+    category: 'Mamalia Liar',
+    date: 'Juni 2026',
+    url: 'https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-4',
+    title: 'Kepiting Bakau (Scylla serrata)',
+    subtitle: 'Bioindikator kesuburan lumpur mangrove dan komoditas perikanan bernilai tinggi',
+    location: 'Zona Sedimen Aluvial',
+    category: 'Krustasea Mangrove',
+    date: 'April 2026',
+    url: 'https://images.unsplash.com/photo-1533518463841-d62e1fc91373?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-5',
+    title: 'Burung Raja Udang / Kingfisher Pesisir',
+    subtitle: 'Spesies pemburu ikan khas tepian sungai mangrove yang mencolok dan gesit',
+    location: 'Percabangan Pohon Api-api',
+    category: 'Avifauna',
+    date: 'Mei 2026',
+    url: 'https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    id: 't4-6',
+    title: 'Keanekaragaman Flora Bruguiera & Avicennia',
+    subtitle: 'Adaptasi perakaran napas pneumatofora khas vegetasi mangrove tropis',
+    location: 'Hutan Pasang Surut Selotong',
+    category: 'Floristik Mangrove',
+    date: 'Juni 2026',
+    url: IMAGES.mangroveRootsWater,
+  },
+];
+
